@@ -1,0 +1,30 @@
+
+cWeb:DoctypePresenceCheck":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷Ãûÿÿÿÿ
+Z	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ
+LWeb:ImgWithoutAltCheck="%Add an "alt" attribute to this image.(İËóÙÿÿÿÿÿ
+LWeb:ImgWithoutAltCheck>"%Add an "alt" attribute to this image.(‘œ¦¿ÿÿÿÿÿ
+HWeb:TableWithoutCaptionCheckA" Add a description to this table.(ü³ƒ
+g Web:TableHeaderHasIdOrScopeCheckD";Add either an 'id' or a 'scope' attribute to this <th> tag.(˜…£
+g Web:TableHeaderHasIdOrScopeCheckE";Add either an 'id' or a 'scope' attribute to this <th> tag.(”Ş÷Š
+CWeb:BoldAndItalicTagsCheckE"Replace this <i> tag by <em>.(”Ş÷Š
+GWeb:ImgWithoutAltCheckE"%Add an "alt" attribute to this image.(”Ş÷Š
+g Web:TableHeaderHasIdOrScopeCheckF";Add either an 'id' or a 'scope' attribute to this <th> tag.(åÓÌÛ
+g Web:TableHeaderHasIdOrScopeCheckG";Add either an 'id' or a 'scope' attribute to this <th> tag.(¤€çÊ
+l Web:TableHeaderHasIdOrScopeCheckH";Add either an 'id' or a 'scope' attribute to this <th> tag.(ãÆÌÿÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheckI";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÈÄÚ·
+C	Web:S1827J")Remove this deprecated "width" attribute.(äŞßâıÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheckJ";Add either an 'id' or a 'scope' attribute to this <th> tag.(äŞßâıÿÿÿÿ
+C	Web:S1827K")Remove this deprecated "width" attribute.(ˆèºÆûÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheckK";Add either an 'id' or a 'scope' attribute to this <th> tag.(ˆèºÆûÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheckL";Add either an 'id' or a 'scope' attribute to this <th> tag.(¤¢¼Ïüÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheckM";Add either an 'id' or a 'scope' attribute to this <th> tag.(áòè…
+l Web:TableHeaderHasIdOrScopeCheckN";Add either an 'id' or a 'scope' attribute to this <th> tag.(¶”şâÿÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheckO";Add either an 'id' or a 'scope' attribute to this <th> tag.(û ‹Ï
+l Web:TableHeaderHasIdOrScopeCheckP";Add either an 'id' or a 'scope' attribute to this <th> tag.(ıÀ¶Ûûÿÿÿÿ
+=	Web:S1827\")Remove this deprecated "width" attribute.(Ê¬÷J
+C	Web:S1827]")Remove this deprecated "width" attribute.(ÄÿŞ˜øÿÿÿÿ
+GWeb:ImgWithoutAltCheck_"%Add an "alt" attribute to this image.(ÎîÌù
+HWeb:BoldAndItalicTagsChecku"Replace this <i> tag by <em>.(ºñÄ¤ûÿÿÿÿ
+BWeb:BoldAndItalicTagsCheckv"Replace this <i> tag by <em>.(•Ş»M
+HWeb:BoldAndItalicTagsCheckw"Replace this <i> tag by <em>.(ªá˜€üÿÿÿÿ
+HWeb:ImgWithoutAltCheck–"%Add an "alt" attribute to this image.(ı½ëÖ

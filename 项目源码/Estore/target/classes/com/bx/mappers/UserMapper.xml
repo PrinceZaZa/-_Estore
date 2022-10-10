@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.bx.mappers.UserMapper" >
+
+    <resultMap id="BaseResultMap" type="com.bx.entity.User" >
+        <id column="uid" property="uid" jdbcType="INTEGER" />
+        <result column="uname" property="uname" jdbcType="VARCHAR" />
+        <result column="gender" property="gender" jdbcType="VARCHAR" />
+        <result column="phone" property="phone" jdbcType="VARCHAR" />
+        <result column="area" property="area" jdbcType="VARCHAR" />
+        <result column="manager" property="manager"  />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="photo" property="photo" jdbcType="VARCHAR" />
+        <result column="create_time" property="create_time"  />
+    </resultMap>
+
+    <!--  手机号唯一校验-->
+    <select id="checkPhoneOnly" resultType="java.lang.Integer">
+        select count(*) from user where phone = #{phone}
+    </select>
+
+    <!--  用户名唯一校验-->
+    <select id="checkUsernameOnly" resultType="java.lang.Integer">
+        select count(*) from user where username = #{username}
+    </select>
+
+    <!--根据用户名查询用户-->
+    <select id="findUser" resultMap="BaseResultMap">
+        select * from user where username = #{username}
+    </select>
+
+    <!--添加用户-->
+    <insert id="addUser" parameterType="com.bx.entity.User">
+        INSERT INTO `xiaomi`.`user`( `uname`, `gender`, `phone`, `area`, `manager`, `username`, `password`, `photo`, `create_time`) VALUES (#{uname},#{gender},#{phone},#{area},#{manager},#{username},${password},#{photo},#{create_time});
+    </insert>
+
+    <select id="findAllUsers" resultType="com.bx.entity.User">
+        select * from user
+    </select>
+
+    <delete id="deleteUsers">
+        delete from user where uid in
+        <foreach collection="array" item="uid" open="(" separator="," close=")">#{uid}</foreach>
+    </delete>
+
+    <update id="SzManager">
+        update user set manager=0 where uid=#{uid}
+    </update>
+
+    <update id="QxManager">
+        update user set manager=1 where uid=#{uid}
+    </update>
+
+</mapper>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bx.mappers.TrolleyMapper">
+
+    <resultMap id="trolleyMap" type="trolley">
+        <id property="tid" column="tid"></id>
+        <result property="uid" column="uid"></result>
+        <result property="gid" column="gid"></result>
+        <result property="number" column="number"></result>
+        <result property="orders_number" column="orders_number"></result>
+        <collection property="goods" ofType="Goods">
+            <id property="gid" column="gid"></id>
+            <result property="cid" column="cid"></result>
+            <result property="gname" column="gname"></result>
+            <result property="color" column="color"></result>
+            <result property="size" column="size"></result>
+            <result property="price" column="price"></result>
+            <result property="description" column="description"></result>
+            <result property="full_description" column="full_description"></result>
+            <result property="pic" column="pic"></result>
+        </collection>
+    </resultMap>
+    <select id="findAllTrolley" resultMap="trolleyMap">
+        select * from trolley t,goods g where t.gid=g.gid and uid=#{uid}
+    </select>
+    <delete id="deleteTrolley">
+        delete from trolley where tid=#{param1} and uid=#{param2}
+    </delete>
+    <insert id="addTrolley">
+        insert into trolley(gid,uid) values(#{param1},#{param2})
+    </insert>
+</mapper>

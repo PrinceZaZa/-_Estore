@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bx.mappers.CategoryMapper">
+    <select id="findAllCategory" resultType="com.bx.entity.Category">
+        select * from category
+    </select>
+
+    <select id="findCategoryByName" resultType="com.bx.entity.Category">
+        select * from category where categoryName=#{cname}
+    </select>
+
+    <insert id="saveCategory">
+        insert into category values(null,#{cname},#{state},#{order_number},#{description},#{create_time})
+    </insert>
+
+    <delete id="deleteCategorys">
+        delete from category where cid in
+        <foreach collection="array" item="cid" open="(" separator="," close=")">#{cid}</foreach>
+    </delete>
+
+    <select id="findCategoryByCid" resultType="com.bx.entity.Category">
+        select * from category where cid=#{cid}
+    </select>
+
+    <update id="updateCategory">
+        update category set cname=#{cname},state=#{state},order_number=#{order_number},description=#{description},create_time=#{create_time} where cid=#{cid}
+    </update>
+</mapper>

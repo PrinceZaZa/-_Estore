@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bx.mappers.GoodsMapper">
+    <select id="findStarGoods" resultType="com.bx.entity.Goods">
+        select * from goods limit 0,5
+    </select>
+    <select id="findHomeGoods" resultType="com.bx.entity.Goods">
+        select * from goods where cid=4
+    </select>
+    <select id="findSmartGoods" resultType="com.bx.entity.Goods">
+        select * from goods where cid=5
+    </select>
+    <select id="findTjGoods" resultType="com.bx.entity.Goods">
+        select * from goods limit 6,5
+    </select>
+    <select id="findHotGoods" resultType="com.bx.entity.Goods">
+        select * from goods where cid=5
+    </select>
+
+    <select id="findGoodById" resultType="Goods">
+        select * from goods where gid=#{gid}
+    </select>
+
+    <select id="getGoods" resultType="com.bx.entity.Goods">
+        select *from goods;
+    </select>
+
+
+
+
+
+    <resultMap id="goodMap" type="com.bx.entity.Goods">
+        <id column="gid" property="gid"/>
+        <result column="gname" property="gname"/>
+        <result column="color" property="color"/>
+        <result column="size" property="size"/>
+        <result column="price" property="price"/>
+        <result column="description" property="description"/>
+        <result column="full_description" property="full_description"/>
+        <result column="pic" property="pic"/>
+        <result column="state" property="state"/>
+        <result column="version" property="version"/>
+        <result column="product_date" property="product_date"/>
+    </resultMap>
+
+    <select id="queryAllGoods"  resultMap="goodMap">
+        select * from goods left join category on goods.cid=category.cid
+    </select>
+
+    <select id="queryById" resultMap="goodMap">
+        select * from goods left join category on goods.cid=category.cid where gid=#{gid}
+    </select>
+
+    <select id="queryByPage" resultMap="goodMap">
+        select * from goods left join category on goods.cid=category.cid limit #{startIndex},#{pageSize}
+    </select>
+
+    <insert id="addGood">
+        insert into xiaomi.goods values
+            (null,#{cid},#{gname},#{color},#{size},#{price},#{description},#{full_description},#{pic},
+             #{state},#{version},#{productDate})
+    </insert>
+
+    <delete id="deleteById">
+        delete from xiaomi.goods where gid=#{gid}
+    </delete>
+
+    <delete id="deleteBatchById">
+        delete from xiaomi.goods where gid in
+        <foreach collection="array" item="gid" open="(" separator="," close=")">
+            #{gid}
+        </foreach>
+    </delete>
+
+    <update id="update">
+        update xiaomi.goods set cid=#{cid},gname=#{gname},color=#{color},size=#{size},price=#{price},
+                                description=#{description},full_description=#{full_description},
+                                pic=#{pic},state=#{state},version=#{version},product_date=#{productDate}
+        where gid=#{gid}
+    </update>
+
+
+</mapper>
